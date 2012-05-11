@@ -86,6 +86,9 @@ If the timeout logic proves that the TCP/IP did not complete before the timeout 
 
 The DebugPrint.cpp module contains several calls to print debug message with and without time stamps and using messages stored in flash or messages stored in RAM. 
 
+NOTE: If you select WEP as the security type to your access point, please note that this version of the code has been set to support WEP-64. To support WEP-128 you must make a change to g100.c. Look for void zg_write_wep_key( and specifically cmd->keyLen = 5; This is the size for 64-bit WEP. If you wish to use 128-bit WEP you must change the '5' to '13' for the longer WEP key.
+
+
 	
 
 
